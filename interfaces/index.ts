@@ -1,10 +1,18 @@
-// You can include shared interfaces/types in a separate file
-// and then use them in any component by importing them. For
-// example, to import the interface below do:
-//
-// import { User } from 'path/to/interfaces';
+export type Images = {
+  url: string;
+  width: number;
+  height: number;
+};
 
-export type User = {
-  id: number
-  name: string
-}
+export type Movie = {
+  title?: string;
+  description?: string;
+  programType?: string;
+  images?: { "Poster Art": Images };
+  releaseYear?: number;
+};
+
+export type Feed = {
+  total: number;
+  entries: Movie[];
+};
