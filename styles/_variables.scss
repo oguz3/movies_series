@@ -1,0 +1,33 @@
+$colors: (
+  "c1": #017efe,
+  "c2": #414141,
+  "c3": #424242,
+  "c4": #1e1e1e,
+  "c5": #babfc3,
+  "c6": #fdfdfd,
+);
+
+$screen-xs: 576px;
+$screen-sm: 768px;
+$screen-md: 1024px;
+$screen-lg: 1280px;
+$screen-xl: 1440px;
+$screen-xxl: 1640px;
+
+$breakpoints: (
+  "xs": $screen-xs,
+  "sm": $screen-sm,
+  "md": $screen-md,
+  "lg": $screen-lg,
+  "xl": $screen-xl,
+  "xxl": $screen-xxl,
+);
+
+$container-max-widths: (
+  "xs": 576px,
+  "sm": 720px,
+  "md": 764px,
+  "lg": 1054px,
+  "xl": 1180px,
+  "xxl": 1380px,
+);

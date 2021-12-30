@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useFeed } from "hooks/useFeed";
 import { Movie } from "@interfaces/index";
 import { sortAlphaNum } from "lib/sort";
+import Card from "@components/Card";
+import CardWrapper from "@components/CardWrapper";
 
 const SeriesPage = () => {
   const { data, isLoading, isError } = useFeed();
@@ -35,30 +37,22 @@ const SeriesPage = () => {
   }
 
   return (
-    <div>
-      <input
-        name="search"
-        placeholder="search..."
-        onChange={(e) => setSearchValue(e?.target?.value.toLocaleLowerCase())}
-      />
-      <div style={{ display: "flex", flexWrap: "wrap" }}>
-        {series &&
-          !!series.length &&
-          series.slice(0, 21).map((serie: Movie, index: number) => {
-            return (
-              <div style={{ maxWidth: "200px", margin: "10px" }} key={index}>
-                <img
-                  width={200}
-                  height={300}
-                  src={serie?.images["Poster Art"]?.url}
-                  alt={serie.title}
-                />
-                <h4>{serie.title}</h4>
-              </div>
-            );
-          })}
+    <>
+      <div className="container">
+        <input
+          name="search"
+          placeholder="search..."
+          onChange={(e) => setSearchValue(e?.target?.value.toLocaleLowerCase())}
+        />
+        <CardWrapper>
+          {series &&
+            !!series.length &&
+            series.slice(0, 21).map((serie: Movie, index: number) => {
+              return <Card {...serie} key={index} />;
+            })}
+        </CardWrapper>
       </div>
-    </div>
+    </>
   );
 };
 
