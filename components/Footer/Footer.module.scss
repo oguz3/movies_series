@@ -2,4 +2,54 @@
   margin-top: auto;
   background: map-get($colors, c4);
   padding: 41px 0px 54px 0px;
+  .link_list {
+    display: flex;
+    align-items: center;
+    li {
+      display: flex;
+      margin-left: 10px;
+      padding-left: 10px;
+      border-left: 1px solid map-get($colors, c5);
+      a {
+        font-size: 13px;
+        line-height: 15px;
+        color: map-get($colors, c5);
+        text-decoration: none;
+      }
+      &:first-child {
+        margin-left: 0px;
+        padding-left: 0px;
+        border: none;
+      }
+    }
+  }
+  h6 {
+    margin-top: 20px;
+    font-weight: 300;
+    font-size: 12px;
+    line-height: 14px;
+    color: map-get($colors, c5);
+  }
+  .icons {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 48px;
+    .social,
+    .store {
+      display: flex;
+      align-items: center;
+      svg {
+        margin-left: 20px;
+        &:first-child {
+          margin-left: 0px;
+        }
+      }
+    }
+    .store {
+      svg {
+        height: 40px !important;
+      }
+    }
+  }
 }
