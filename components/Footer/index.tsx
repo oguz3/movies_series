@@ -42,14 +42,38 @@ const Footer = () => {
         <h6>Copyright © 2016 DEMO Streaming. All Rights Reserved.</h6>
         <div className={styles.icons}>
           <div className={styles.social}>
-            <Icon icon="facebook-white" size={30} color="#fff" />
-            <Icon icon="twitter-white" size={30} color="#fff" />
-            <Icon icon="instagram-white" size={30} color="#fff" />
+            <Link href="/">
+              <a>
+                <Icon icon="facebook-white" size={30} color="#fff" />
+              </a>
+            </Link>
+            <Link href="/">
+              <a>
+                <Icon icon="twitter-white" size={30} color="#fff" />
+              </a>
+            </Link>
+            <Link href="/">
+              <a>
+                <Icon icon="instagram-white" size={30} color="#fff" />
+              </a>
+            </Link>
           </div>
           <div className={styles.store}>
-            <Icon icon="app-store" size={135} />
-            <Icon icon="play-store" size={135} />
-            <Icon icon="windows-store" size={110} />
+            <Link href="/">
+              <a>
+                <Icon icon="app-store" size={135} />
+              </a>
+            </Link>
+            <Link href="/">
+              <a>
+                <Icon icon="play-store" size={135} />
+              </a>
+            </Link>
+            <Link href="/">
+              <a>
+                <Icon icon="windows-store" size={110} />
+              </a>
+            </Link>
           </div>
         </div>
       </div>

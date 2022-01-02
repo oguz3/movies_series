@@ -5,6 +5,7 @@ import { sortAlphaNum } from "lib/sort";
 import Card from "@components/Card";
 import CardWrapper from "@components/CardWrapper";
 import Layout from "@components/Layout";
+import Input from "@components/UI/Input";
 
 const SeriesPage = () => {
   const { data, isLoading, isError } = useFeed();
@@ -40,11 +41,12 @@ const SeriesPage = () => {
   return (
     <Layout title="Series">
       <div className="container">
-        <input
+        <Input
           name="search"
           placeholder="search..."
           onChange={(e) => setSearchValue(e?.target?.value.toLocaleLowerCase())}
         />
+
         <CardWrapper>
           {series &&
             !!series.length &&

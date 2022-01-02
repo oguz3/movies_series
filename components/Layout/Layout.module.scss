@@ -2,4 +2,8 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  .content {
+    padding-top: 36px;
+    padding-bottom: 62px;
+  }
 }

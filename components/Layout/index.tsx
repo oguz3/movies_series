@@ -18,7 +18,7 @@ const Layout: React.FC<Props> = ({ title, children }) => {
       </Head>
       <div className={styles.layout}>
         <Header />
-        {children}
+        <div className={styles.content}>{children}</div>
         <Footer />
       </div>
     </>
