@@ -4,6 +4,7 @@ import { Movie } from "@interfaces/index";
 import { sortAlphaNum } from "lib/sort";
 import Card from "@components/Card";
 import CardWrapper from "@components/CardWrapper";
+import Layout from "@components/Layout";
 
 const SeriesPage = () => {
   const { data, isLoading, isError } = useFeed();
@@ -37,7 +38,7 @@ const SeriesPage = () => {
   }
 
   return (
-    <>
+    <Layout title="Series">
       <div className="container">
         <input
           name="search"
@@ -52,7 +53,7 @@ const SeriesPage = () => {
             })}
         </CardWrapper>
       </div>
-    </>
+    </Layout>
   );
 };
 
