@@ -1,0 +1,21 @@
+.search {
+  display: grid;
+  grid-template-columns: 1fr 64px;
+  align-items: center;
+  width: 432px;
+  box-shadow: 0px 3px 10px rgb(0 0 0 / 18%);
+  input {
+    flex: 1;
+  }
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0px;
+    border: none;
+    background: #017efe;
+    color: white;
+    cursor: pointer;
+  }
+}

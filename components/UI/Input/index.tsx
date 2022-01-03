@@ -2,14 +2,14 @@ import React from "react";
 
 import styles from "./Input.module.scss";
 
-type Props = {
-  name: string;
-  placeholder: string;
-  onChange: (e: any) => void;
+export type InputProps = {
+  name?: string;
+  placeholder?: string;
+  onChange?: (e: any) => void;
   rest?: any;
 };
 
-const Input: React.FC<Props> = ({ name, placeholder, onChange, rest }) => {
+const Input: React.FC<InputProps> = ({ name, placeholder, onChange, rest }) => {
   return (
     <input
       className={styles.input}

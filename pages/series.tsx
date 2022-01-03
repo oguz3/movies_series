@@ -5,7 +5,8 @@ import { sortAlphaNum } from "lib/sort";
 import Card from "@components/Card";
 import CardWrapper from "@components/CardWrapper";
 import Layout from "@components/Layout";
-import Input from "@components/UI/Input";
+import SearchInput from "@components/UI/SearchInput";
+import Select from "@components/UI/Select";
 
 const SeriesPage = () => {
   const { data, isLoading, isError } = useFeed();
@@ -41,11 +42,22 @@ const SeriesPage = () => {
   return (
     <Layout title="Series">
       <div className="container">
-        <Input
-          name="search"
-          placeholder="search..."
-          onChange={(e) => setSearchValue(e?.target?.value.toLocaleLowerCase())}
-        />
+        <div>
+          <SearchInput
+            name="search"
+            placeholder="search..."
+            onClick={(e) => setSearchValue(e)}
+          />
+          <Select
+            options={[
+              "Sort by year in descending order",
+              "Sort by year in ascending order",
+              "Sort by title in descending order",
+              "Sort by title in ascending order",
+            ]}
+            onChange={(e) => console.log(e)}
+          />
+        </div>
 
         <CardWrapper>
           {series &&

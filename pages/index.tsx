@@ -1,3 +1,5 @@
+import Card from "@components/Card";
+import CardWrapper from "@components/CardWrapper";
 import Layout from "@components/Layout";
 import Link from "next/link";
 
@@ -5,8 +7,18 @@ const IndexPage = () => {
   return (
     <Layout title="Home">
       <div className="container">
-        <Link href="/movies">Movies</Link>
-        <Link href="/series">Series</Link>
+        <CardWrapper>
+          <Link href="/series">
+            <a>
+              <Card title="Series" category_card />
+            </a>
+          </Link>
+          <Link href="/movies">
+            <a>
+              <Card title="Movies" category_card />
+            </a>
+          </Link>
+        </CardWrapper>
       </div>
     </Layout>
   );

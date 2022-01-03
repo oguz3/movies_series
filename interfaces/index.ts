@@ -1,14 +1,14 @@
 export type Images = {
-  url: string;
-  width: number;
-  height: number;
+  url?: string;
+  width?: number;
+  height?: number;
 };
 
 export type Movie = {
   title?: string;
   description?: string;
   programType?: string;
-  images?: { "Poster Art": Images };
+  images?: { "Poster Art"?: Images };
   releaseYear?: number;
 };
 

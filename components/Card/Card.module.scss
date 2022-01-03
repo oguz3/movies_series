@@ -1,6 +1,24 @@
 .card {
   .image_wrapper {
     position: relative;
+    &.placeholder {
+      background-color: map-get($colors, c4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 204px;
+
+      h6 {
+        font-weight: 600;
+        font-size: 27px;
+        color: map-get($colors, c6);
+        text-transform: uppercase;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
   }
   .title {
     margin-top: 10px;
