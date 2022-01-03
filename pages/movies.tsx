@@ -1,9 +1,13 @@
-import { useFeed } from "hooks/useFeed";
+import React from "react";
+import Layout from "@components/Layout";
+import List from "modules/List";
 
 const MoviesPage = () => {
-  const { status, data, error, isFetching } = useFeed();
-
-  return <h1>{isFetching ? "Loading..." : data?.total + "data"}</h1>;
+  return (
+    <Layout title="Movie">
+      <List type="movie" />
+    </Layout>
+  );
 };
 
 export default MoviesPage;

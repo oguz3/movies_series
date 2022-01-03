@@ -18,7 +18,7 @@ const SearchInput: React.FC<Props> = ({ onClick, ...rest }) => {
         {...rest}
         onChange={(e) => setSearchValue(e?.target?.value.toLocaleLowerCase())}
       />
-      <button onClick={() => onClick(searchValue)}>
+      <button tabIndex={1} role="button" onClick={() => onClick(searchValue)}>
         <Image
           width={21}
           height={21}
