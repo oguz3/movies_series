@@ -13,6 +13,15 @@
       line-height: 39px;
       color: map-get($colors, c6);
     }
+    .btn_wrapper {
+      display: flex;
+      align-items: center;
+      & > button {
+        &:last-child {
+          margin-left: 24px;
+        }
+      }
+    }
   }
 }
 .subheader {

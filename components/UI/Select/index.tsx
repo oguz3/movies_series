@@ -5,7 +5,7 @@ import cn from "classnames";
 import styles from "./Select.module.scss";
 
 type Props = {
-  options?: Array<string>;
+  options?: Array<{ value: string; label: string }>;
   onChange?: (e: any) => void;
 };
 
@@ -14,7 +14,7 @@ const Select: React.FC<Props> = ({ options, onChange }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   useEffect(() => {
-    onChange(activeValue);
+    activeValue !== null && onChange(activeValue);
   }, [activeValue]);
 
   return (
@@ -23,7 +23,7 @@ const Select: React.FC<Props> = ({ options, onChange }) => {
         className={cn(!activeValue && styles.placeholder)}
         onClick={() => setIsOpen(!isOpen)}
       >
-        {activeValue ? activeValue : "Sort by"}
+        {activeValue ? activeValue.label : "Sort by"}
         <Image
           width={13}
           height={8}
@@ -47,7 +47,7 @@ const Select: React.FC<Props> = ({ options, onChange }) => {
                   }}
                   className={cn(item === activeValue && styles.active)}
                 >
-                  {item}
+                  {item.label}
                 </a>
               </li>
             ))}

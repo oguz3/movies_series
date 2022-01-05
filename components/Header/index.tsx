@@ -1,3 +1,4 @@
+import Button from "@components/UI/Button";
 import React from "react";
 
 import styles from "./Header.module.scss";
@@ -9,7 +10,10 @@ const Header = () => {
         <div className="container">
           <div className={styles.header_wrapper}>
             <h2>DEMO Streaming</h2>
-            <div>Log in</div>
+            <div className={styles.btn_wrapper}>
+              <Button>Log in</Button>
+              <Button secondary>Start your free trial</Button>
+            </div>
           </div>
         </div>
       </div>

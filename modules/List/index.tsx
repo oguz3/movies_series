@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from "react";
-import { useFeed } from "hooks/useFeed";
-import { Movie } from "@interfaces/index";
-import { sortAlphaNum } from "lib/sort";
 import Card from "@components/Card";
 import CardWrapper from "@components/CardWrapper";
 import SearchInput from "@components/UI/SearchInput";
 import Select from "@components/UI/Select";
+
+import { selectOptions } from "@data/sample";
+import { useFeed } from "hooks/useFeed";
+import { Movie } from "@interfaces/index";
+import {
+  ascendingSortAlphaNum,
+  ascendingSortWithYear,
+  descadingSortAlphaNum,
+  descadingSortWithYear,
+} from "lib/sort";
 
 import styles from "./List.module.scss";
 
@@ -16,13 +23,21 @@ type Props = {
 const List: React.FC<Props> = ({ type }) => {
   const { data, isLoading, isError } = useFeed();
   const [searchValue, setSearchValue] = useState(null);
+  const [selectValue, setSelectValue] = useState("title_ascending");
   const [listData, setListData] = useState(null);
+
+  const sortObject = {
+    year_descending: descadingSortWithYear,
+    year_ascending: ascendingSortWithYear,
+    title_descending: descadingSortAlphaNum,
+    title_ascending: ascendingSortAlphaNum,
+  };
 
   useEffect(() => {
     if (data && data.entries && !!data.entries.length) {
       const allListData = data?.entries
         .filter((data) => data?.programType === type)
-        .sort(sortAlphaNum);
+        .sort(sortObject[selectValue]);
       const newListData = allListData.filter(
         (data) => data?.releaseYear > 2010
       );
@@ -36,7 +51,7 @@ const List: React.FC<Props> = ({ type }) => {
         setListData(newListData);
       }
     }
-  }, [data, searchValue]);
+  }, [data, searchValue, selectValue]);
 
   if (isLoading) {
     return (
@@ -64,13 +79,8 @@ const List: React.FC<Props> = ({ type }) => {
             onClick={(e) => setSearchValue(e)}
           />
           <Select
-            options={[
-              "Sort by year in descending order",
-              "Sort by year in ascending order",
-              "Sort by title in descending order",
-              "Sort by title in ascending order",
-            ]}
-            onChange={(e) => console.log(e)}
+            options={selectOptions}
+            onChange={(e) => setSelectValue(e?.value)}
           />
         </div>
 

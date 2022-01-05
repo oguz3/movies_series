@@ -1,5 +1,11 @@
 import { Feed } from "@interfaces/index";
 
+export const selectOptions = [
+  { value: "year_descending", label: "Sort by year in descending order" },
+  { value: "year_ascending", label: "Sort by year in ascending order" },
+  { value: "title_descending", label: "Sort by title in descending order" },
+  { value: "title_ascending", label: "Sort by title in ascending order" },
+];
 /** Dummy data. */
 export const sampleData: Feed = {
   total: 100,
