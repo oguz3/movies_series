@@ -21,6 +21,8 @@ const Button: React.FC<Props> = ({
       onClick={onClick}
       type={type}
       className={cn(styles.btn, secondary && styles.secondary)}
+      role="button"
+      tabIndex={1}
     >
       {children}
     </button>

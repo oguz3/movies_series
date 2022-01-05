@@ -5,6 +5,8 @@ $colors: (
   "c4": #1e1e1e,
   "c5": #babfc3,
   "c6": #fdfdfd,
+  "c7": #ffffff,
+  "c8": #b4b4b4,
 );
 
 $screen-xs: 576px;
@@ -26,8 +28,8 @@ $breakpoints: (
 $container-max-widths: (
   "xs": 576px,
   "sm": 720px,
-  "md": 764px,
-  "lg": 1054px,
-  "xl": 1180px,
+  "md": 1040px,
+  "lg": 1180px,
+  "xl": 1380px,
   "xxl": 1380px,
 );

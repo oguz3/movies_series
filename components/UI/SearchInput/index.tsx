@@ -4,6 +4,7 @@ import Input, { InputProps } from "@components/UI/Input";
 
 import styles from "./SearchInput.module.scss";
 import Image from "next/image";
+import Button from "../Button";
 
 type Props = InputProps & {
   onClick?: (e: any) => void;
@@ -18,7 +19,7 @@ const SearchInput: React.FC<Props> = ({ onClick, ...rest }) => {
         {...rest}
         onChange={(e) => setSearchValue(e?.target?.value.toLocaleLowerCase())}
       />
-      <button tabIndex={1} role="button" onClick={() => onClick(searchValue)}>
+      <Button type="submit" onClick={() => onClick(searchValue)}>
         <Image
           width={21}
           height={21}
@@ -28,7 +29,7 @@ const SearchInput: React.FC<Props> = ({ onClick, ...rest }) => {
           objectFit="cover"
           objectPosition="center"
         />
-      </button>
+      </Button>
     </div>
   );
 };

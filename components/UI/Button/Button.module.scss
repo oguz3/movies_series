@@ -6,14 +6,21 @@
   border: none;
   outline: none;
   cursor: pointer;
+  padding: 0px;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 12px;
   line-height: 16px;
   background-color: transparent;
-  color: #fdfdfd;
+  color: map-get($colors, c6);
+  @include respond-above(xs) {
+    font-size: 14px;
+  }
 
   &.secondary {
-    padding: 12px 16px;
-    background: #424242;
+    padding: 10px 14px;
+    background: map-get($colors, c3);
+    @include respond-above(xs) {
+      padding: 12px 16px;
+    }
   }
 }

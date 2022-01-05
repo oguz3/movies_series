@@ -2,5 +2,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 32px;
+  margin-bottom: 24px;
+  flex-direction: column;
+
+  @include respond-below(xs) {
+    & > div {
+      width: 100%;
+      &:first-child {
+        margin-bottom: 20px;
+      }
+    }
+  }
+  @include respond-above(xs) {
+    flex-direction: row;
+    margin-bottom: 32px;
+  }
 }

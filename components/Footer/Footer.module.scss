@@ -1,15 +1,27 @@
 .footer {
   margin-top: auto;
   background: map-get($colors, c4);
-  padding: 41px 0px 54px 0px;
+  padding: 41px 0px 24px 0px;
+  @include respond-above(xs) {
+    padding: 41px 0px 54px 0px;
+  }
   .link_list {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    @include respond-above(sm) {
+      flex-direction: row;
+      align-items: center;
+    }
     li {
       display: flex;
-      margin-left: 10px;
-      padding-left: 10px;
-      border-left: 1px solid map-get($colors, c5);
+      margin-bottom: 8px;
+      @include respond-above(sm) {
+        margin-bottom: 0px;
+        margin-left: 10px;
+        padding-left: 10px;
+        border-left: 1px solid map-get($colors, c5);
+      }
       a {
         font-size: 13px;
         line-height: 15px;
@@ -37,16 +49,25 @@
   }
   .icons {
     display: flex;
-    align-items: center;
     justify-content: space-between;
-    margin-top: 48px;
+    margin-top: 32px;
+    flex-direction: column;
+    @include respond-above(sm) {
+      flex-direction: row;
+      margin-top: 48px;
+      align-items: center;
+    }
     .social,
     .store {
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      @include respond-above(sm) {
+        gap: 20px;
+      }
       a {
         display: flex;
-        margin-left: 20px;
         transition: 0.2s all;
         &:hover {
           transform: translateY(-2px);
@@ -56,9 +77,27 @@
         }
       }
     }
-    .store {
+    .social {
       svg {
-        height: 40px !important;
+        @include respond-below(sm) {
+          width: 20px !important;
+          height: 20px !important;
+        }
+      }
+    }
+    .store {
+      margin-top: 20px;
+      @include respond-above(sm) {
+        margin-top: 0px;
+      }
+      svg {
+        height: 26px !important;
+        @include respond-above(sm) {
+          height: 40px !important;
+        }
+        @include respond-below(sm) {
+          width: auto !important;
+        }
       }
     }
   }

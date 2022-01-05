@@ -2,8 +2,8 @@
   border: none;
   outline: none;
   padding: 13px 16px;
-  background: #ffffff;
+  background: map-get($colors, c7);
   font-size: 13px;
   line-height: 15px;
-  color: #b4b4b4;
+  color: map-get($colors, c8);
 }

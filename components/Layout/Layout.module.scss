@@ -3,7 +3,11 @@
   display: flex;
   flex-direction: column;
   .content {
-    padding-top: 36px;
-    padding-bottom: 62px;
+    padding-top: 24px;
+    padding-bottom: 46px;
+    @include respond-above(sm) {
+      padding-top: 36px;
+      padding-bottom: 62px;
+    }
   }
 }
