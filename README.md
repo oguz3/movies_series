@@ -1,4 +1,13 @@
 # Movies Series
 
-### Total coding time
-[![wakatime](https://wakatime.com/badge/user/005e5555-41c0-4e1a-bd56-742d5ab3a6fc/project/2e25cc87-53ad-406f-82a6-e9bb87e4c25f.svg)](https://wakatime.com/badge/user/005e5555-41c0-4e1a-bd56-742d5ab3a6fc/project/2e25cc87-53ad-406f-82a6-e9bb87e4c25f)
+### Preview Link
+[https://movie-serie.herokuapp.com/](https://movie-serie.herokuapp.com/)
+
+## Available Scripts
+
+In the project directory, you can run:
+
+### `yarn dev`
+
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
