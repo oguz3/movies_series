@@ -64,7 +64,7 @@ const List: React.FC<Props> = ({ type }) => {
   if (isError) {
     return (
       <section>
-        <div className="container">Error...</div>
+        <div className="container">Oops, something went wrong...</div>
       </section>
     );
   }
@@ -84,13 +84,15 @@ const List: React.FC<Props> = ({ type }) => {
           />
         </div>
 
-        <CardWrapper>
-          {listData &&
-            !!listData.length &&
-            listData.slice(0, 21).map((listItem: Movie, index: number) => {
+        {listData && !!listData.length ? (
+          <CardWrapper>
+            {listData?.slice(0, 21)?.map((listItem: Movie, index: number) => {
               return <Card {...listItem} key={index} />;
             })}
-        </CardWrapper>
+          </CardWrapper>
+        ) : (
+          <h5>Oops! No Data Found</h5>
+        )}
       </div>
     </section>
   );

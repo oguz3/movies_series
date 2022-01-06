@@ -1,4 +1,5 @@
 import Icon from "@components/UI/Icon";
+import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import styles from "./Footer.module.scss";
@@ -66,7 +67,16 @@ const Footer = () => {
             </Link>
             <Link href="/">
               <a>
-                <Icon icon="play-store" size={135} />
+                {/* <Icon icon="play-store" size={135} /> */}
+                <Image
+                  width={135}
+                  height={40}
+                  layout="fixed"
+                  src={"/icons/play-store.svg"}
+                  alt={"icon"}
+                  objectFit="cover"
+                  objectPosition="center"
+                />
               </a>
             </Link>
             <Link href="/">
