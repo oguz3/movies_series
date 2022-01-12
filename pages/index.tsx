@@ -13,7 +13,7 @@ const IndexPage = () => {
               <Card title="Series" category_card />
             </a>
           </Link>
-          <Link href="/movies">
+          <Link href="/movie">
             <a>
               <Card title="Movies" category_card />
             </a>
