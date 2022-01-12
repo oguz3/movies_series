@@ -6,14 +6,16 @@ import { useRouter } from "next/router";
 
 const Page = () => {
   const router = useRouter();
-  const { slug } = router.query;
+  const slug = router.query.slug || [];
 
-  const page404 = slug !== "movie" && slug !== "series";
+  const page404 = !!slug.length
+    ? slug[0] !== "movie" && slug[0] !== "series"
+    : false;
 
   return (
-    <Layout title={page404 ? "404" : slug}>
+    <Layout title={page404 ? "404" : slug[0]}>
       {!page404 ? (
-        <List type={slug} />
+        <List type={slug[0]} />
       ) : (
         <div className="container">
           <h2>Page not found!</h2>

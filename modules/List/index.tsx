@@ -17,7 +17,7 @@ import {
 import styles from "./List.module.scss";
 
 type Props = {
-  type: "series" | "movie";
+  type: string;
 };
 
 const List: React.FC<Props> = ({ type }) => {
