@@ -1,4 +1,6 @@
 import React from "react";
+import Head from "next/head";
+import Script from "next/script";
 import { QueryClient, QueryClientProvider } from "react-query";
 import { ReactQueryDevtools } from "react-query/devtools";
 import "@styles/globals.scss";
@@ -8,6 +10,25 @@ export default function MyApp({ Component, pageProps }) {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <Head>
+        <Script
+          strategy="afterInteractive"
+          id="sleeknoteScript"
+          type="text/javascript"
+          dangerouslySetInnerHTML={{
+            __html: `
+              (function () {
+                var sleeknoteScriptTag = document.createElement("script");
+                sleeknoteScriptTag.type = "text/javascript";
+                sleeknoteScriptTag.charset = "utf-8";
+                sleeknoteScriptTag.src = ("//sleeknotecustomerscripts.sleeknote.com/55386.js");
+                var s = document.getElementById("sleeknoteScript"); 
+                s.parentNode.insertBefore(sleeknoteScriptTag, s); 
+              })();
+            `,
+          }}
+        />
+      </Head>
       <Component {...pageProps} />
       <ReactQueryDevtools />
       <script
