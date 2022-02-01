@@ -15,6 +15,11 @@ export default function MyApp({ Component, pageProps }) {
         src="https://staging.popupsmart.com/api/Bundle/85"
         async
       ></script>
+      <script
+        type="text/javascript"
+        async
+        src="//l.getsitecontrol.com/8wl56gr4.js"
+      ></script>
     </QueryClientProvider>
   );
 }
