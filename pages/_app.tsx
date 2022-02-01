@@ -10,6 +10,11 @@ export default function MyApp({ Component, pageProps }) {
     <QueryClientProvider client={queryClient}>
       <Component {...pageProps} />
       <ReactQueryDevtools />
+      <script
+        type="text/javascript"
+        src="https://staging.popupsmart.com/api/Bundle/85"
+        async
+      ></script>
     </QueryClientProvider>
   );
 }
